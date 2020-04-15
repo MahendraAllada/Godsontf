@@ -35,11 +35,6 @@ sed -i \"s/10/$instance_size/g\" /var/lib/jenkins/workspace/terramahi/ec2.tf'''
                 sh 'terraform plan'
             }
         }
-        stage('terraform apply') {
-            steps {
-                sh 'terraform apply  -auto-approve'
-            }
-        }
         stage('terraform ended') {
             steps {
                 sh 'echo "Ended....!!"'
