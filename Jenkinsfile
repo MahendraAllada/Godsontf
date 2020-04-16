@@ -22,7 +22,7 @@ pipeline {
 sed -i \"s/password/$secret_key/g\" /var/lib/jenkins/workspace/terramahi/variables.tf
 sed -i \"s/t2.micro/$instance_type/g\" /var/lib/jenkins/workspace/terramahi/variables.tf
 sed -i \"s/10/$instance_size/g\" /var/lib/jenkins/workspace/terramahi/ec2.tf'''
-sed -i \"s/ap-northeast-1/$region/g\" /var/lib/jenkins/workspace/terramahi/variables.tf
+sed -i \"s/ap-northeast-1/$instance_region/g\" /var/lib/jenkins/workspace/terramahi/variables.tf
 sed -i \"s/ap-northeast-1a/$subnet_zone/g\" /var/lib/jenkins/workspace/terramahi/variables.tf
 sed -i \"s/mahendratokyo/$key_pair/g\" /var/lib/jenkins/workspace/terramahi/variables.tf
 sed -i \"s/ami-0f7919c33c90f5b58/$ami_Id/g\" /var/lib/jenkins/workspace/terramahi/vpc.tf
@@ -38,6 +38,11 @@ sed -i \"s/ami-0f7919c33c90f5b58/$ami_Id/g\" /var/lib/jenkins/workspace/terramah
         stage('terraform plan') {
             steps {
                 sh 'terraform plan'
+            }
+        }
+        stage('terraform apply') {
+            steps {
+                sh 'terraform apply'
             }
         }
         stage('terraform ended') {
