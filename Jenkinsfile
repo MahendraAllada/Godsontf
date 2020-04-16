@@ -42,7 +42,7 @@ sed -i \"s/ami-0f7919c33c90f5b58/$ami_Id/g\" /var/lib/jenkins/workspace/terramah
         }
         stage('terraform apply') {
             steps {
-                sh 'terraform apply'
+                sh 'terraform apply -auto-approve'
             }
         }
         stage('terraform ended') {
