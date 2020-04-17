@@ -12,7 +12,7 @@ variable "security_key" {
 
 variable "region" {
     description = "EC2 Region for the VPC"
-    default     = "ap-northeast-1"
+    default     = "ca-central-1"
 }
 
 variable "vpc_cidr" {
@@ -27,12 +27,12 @@ variable "public_cidr" {
 
 variable "subnet_zone" {
     description = "public availability zone"
-    default     = "ap-northeast-1a"
+    default     = "ca-central-1a"
 }
 
 variable "image" {
     description = "instance images"
-    default     = "ami-0f310fced6141e627"
+    default     = "ami-054362537f5132ce2"
 }
 
 variable "instance_type" {
@@ -42,5 +42,5 @@ variable "instance_type" {
 
 variable "key" {
     description = "instance key name"
-    default     = "mahendratokyo"
+    default     = "mahicanada"
 }
