@@ -83,8 +83,8 @@ DATABASES = {
         'NAME': 'zippyops',
         'USER': 'zippyops',
         'PASSWORD': 'zippyops',
-        'HOST': 'localhost',
-        'PORT': '',
+        'HOST': '10.0.1.144',
+        'PORT': '3306',
     }
 }
 
